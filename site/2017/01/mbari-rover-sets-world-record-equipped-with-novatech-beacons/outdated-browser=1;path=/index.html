@@ -1,0 +1,670 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie9 lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie9 lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie9 lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js ie9" lang="en-US"> <![endif]-->
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+	<title>Page Not Found - 404 | Frey Satellite Corporation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://www.freysatellitecorp.com/favicon.ico?x55604" rel="shortcut icon" type="image/png">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-57x57-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-72x72-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-76x76-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-114x114-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-120x120-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-144x144-precomposed.jpg?x55604">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.freysatellitecorp.com/wp-content/themes/metocean/apple-touch-icon-152x152-precomposed.jpg?x55604">
+			
+		<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?x55604&amp;ver=3.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?x55604&amp;ver=3.5.6' type='text/css' media='only screen and (max-width: 768px)' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='kula-woo-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/kula-woo/dist/css/style.min.css?x55604&amp;ver=1511346848' type='text/css' media='all' />
+<link rel='stylesheet' id='sv-wc-payment-gateway-payment-form-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/woocommerce-gateway-moneris/lib/skyverge/woocommerce/payment-gateway/assets/css/frontend/sv-wc-payment-gateway-payment-form.min.css?x55604&amp;ver=4.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='stylesheet-font-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C700&#038;ver=4.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='stylesheet-css'  href='https://www.freysatellitecorp.com/wp-content/themes/metocean/dist/css/style.min.css?x55604&amp;ver=1563799692' type='text/css' media='all' />
+<link rel='stylesheet' id='forget-about-shortcode-buttons-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/forget-about-shortcode-buttons/public/css/button-styles.css?x55604&amp;ver=2.1.2' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wp_sentry = {"dsn":"https:\/\/078f7c36f9bc430ca51089bd1002a939@coroner.brighthost.ca\/48","release":"0.1","environment":"production","tags":{"wordpress":"4.9.10","language":"en-US"},"context":{"user":{"id":0,"name":"anonymous"}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/725cc.js?x55604"></script>
+
+
+
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.freysatellitecorp.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.freysatellitecorp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<meta name="generator" content="WooCommerce 3.5.6" />
+<!-- Stream WordPress user activity plugin v3.2.3 -->
+<meta name="description" content="" />
+<meta property="og:title" content="" />
+<meta property="og:site_title" content="Frey Satellite Corporation" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://www.freysatellitecorp.com/wp-content/themes/metocean/favicon.ico" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	</head>
+<body class="error404 woocommerce-no-js">
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	<header class="container header" role="banner">
+		<a href="#main" class="btn visuallyhidden focusable skip-link">Skip to main content</a>
+		<div class="row">
+			<div class="eightcol tool-menu-wrapper last">
+				<nav class="tertiary-menu">
+					<ul>
+						<li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-95 met-object-id-21"><a href="https://www.freysatellitecorp.com/about-us/">About Us</a></li>
+<li id="menu-item-352" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-352 met-object-id-176"><a href="https://www.freysatellitecorp.com/news/">News</a></li>
+<li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-351 met-object-id-236"><a href="https://www.freysatellitecorp.com/events/">Events</a></li>
+					</ul>
+				</nav>
+				<nav class="tool-menu">
+					<ul class="tool-menu__links tool-menu__account-links">
+						<li >
+							<a href="https://www.freysatellitecorp.com/contact-us/" class="contact-link">
+								Contact Us								<i class="icon-chat-bubble"></i>
+							</a>
+						</li>
+													<li  >
+								<a href="https://www.freysatellitecorp.com/my-account/" title="Login / Register">
+									Login <i class="icon-user"></i>
+								</a>
+							</li>
+												<li >
+							<a class="cart-contents" href="https://www.freysatellitecorp.com/cart/">
+								<span class="cart-total"></span>
+								<i class="icon-basket"></i>
+								<span class="visuallyhidden">Cart</span>
+							</a>
+						</li>
+						<li class="">
+	 						<a class="search-button" href="#">
+	 							<i class="icon-magnifier"></i>
+								<span class="visuallyhidden">Search</span>
+	 						</a>
+
+							<form action="/" method="GET" class="search-form">
+								<input type="text" name="s" aria-label="Search the Frey Satellite Corporation site" />
+								<input type="submit" value="Search" />
+							</form>
+	 					</li>
+					</ul>
+				</nav>
+				<nav class="social-menu last">
+					
+								<ul class="social-menu__links">
+																			<li><a href="#"><span class="visuallyhidden">Twitter</span><i class="icon-twitter"></i></a></li>
+																												<li><a href="#"><span class="visuallyhidden">Facebook</span><i class="icon-facebook"></i></a></li>
+																												<li><a href="#"><span class="visuallyhidden">Linkedin</span><i class="icon-linkedin"></i></a></li>
+																	</ul>
+																		</nav>
+			</div>
+			<div class="fourcol header__logo">
+				<a href="https://www.freysatellitecorp.com" class="logo-link"><img src="https://www.freysatellitecorp.com/wp-content/themes/metocean/dist/img/logo/metocean-logo-white.png?x55604" alt="Frey Satellite Corporation"></a>
+			</div>
+			<div class="eightcol primary-menu-wrapper right last">
+				<a href="#footer-menu" title="Menu toggle" class="menu-toggle"><i class="icon-menu"></i></a>
+
+				<nav class="primary-menu" role="navigation">
+					<ul>
+						<li id="menu-item-978" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-978 met-object-id-24 telematics-link"><a href="https://www.freysatellitecorp.com/shop/telematics/">Telematics</a>
+<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-0'><ul class='sub-nav-group'>
+	<li id="menu-item-5403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5403 met-object-id-5403"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-global-satellite-network/">Iridium Global Satellite Network</a>
+	<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-1'><ul class='sub-nav-group'>
+		<li id="menu-item-5300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5300 met-object-id-5300"><a href="https://www.freysatellitecorp.com/shop/telematics/what-is-iridium-certus/">What is Iridium Certus</a></li>
+	</ul></div>
+</li>
+	<li id="menu-item-980" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-980 met-object-id-19"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-phones/">Iridium Satellite Phones</a></li>
+	<li id="menu-item-979" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-979 met-object-id-20"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-airtime-plans/">Iridium Satellite Airtime Plans</a>
+	<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-1'><ul class='sub-nav-group'>
+		<li id="menu-item-5294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5294 met-object-id-5294"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-airtime-plans/iridium-certus/">Iridium Certus</a></li>
+		<li id="menu-item-1918" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1918 met-object-id-66"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-airtime-plans/post-paid/">Post-Paid</a></li>
+		<li id="menu-item-1919" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1919 met-object-id-65"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-airtime-plans/pre-paid/">Pre-Paid</a></li>
+	</ul></div>
+</li>
+	<li id="menu-item-1763" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1763 met-object-id-47"><a href="https://www.freysatellitecorp.com/shop/telematics/accessories/">Accessories</a></li>
+	<li id="menu-item-1079" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1079 met-object-id-33"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-hardware/">Iridium® Hardware</a></li>
+	<li id="menu-item-3447" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3447 met-object-id-3447"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-certus-broadband/">Iridium® CERTUS Broadband</a></li>
+	<li id="menu-item-1080" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1080 met-object-id-34"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-satellite-modems-transceivers/">Satellite Modems &#038; Transceivers</a></li>
+	<li id="menu-item-1078" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1078 met-object-id-36"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-developer-kits/">Iridium® Developer Kits</a></li>
+	<li id="menu-item-1076" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1076 met-object-id-37"><a href="https://www.freysatellitecorp.com/shop/telematics/asset-monitoring/">Asset Monitoring</a></li>
+	<li id="menu-item-1895" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1895 met-object-id-63"><a href="https://www.freysatellitecorp.com/shop/telematics/provisioning-and-billing/">Provisioning and Billing</a></li>
+</ul></div>
+</li>
+<li id="menu-item-981" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-981 met-object-id-25 systems-link"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/">Frey Satellite Systems</a>
+<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-0'><ul class='sub-nav-group'>
+	<li id="menu-item-1083" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1083 met-object-id-38"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/novatech-beacons-and-flashers/">NOVATECH™ Beacons and Flashers</a>
+	<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-1'><ul class='sub-nav-group'>
+		<li id="menu-item-1084" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1084 met-object-id-39"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/novatech-beacons-and-flashers/novatech-flashers/">NOVATECH™ Flashers</a></li>
+		<li id="menu-item-1085" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1085 met-object-id-40"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/novatech-beacons-and-flashers/novatech-radio-beacons/">NOVATECH™ Radio Beacons</a></li>
+		<li id="menu-item-1086" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1086 met-object-id-41"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/novatech-beacons-and-flashers/novatech-satellite-beacons/">NOVATECH™ Satellite Beacons</a></li>
+		<li id="menu-item-1701" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-1701 met-object-id-1450"><a href="https://www.freysatellitecorp.com/product/direction-finder/">Direction Finder</a></li>
+	</ul></div>
+</li>
+	<li id="menu-item-1081" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1081 met-object-id-42"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/current-monitoring/">Current Monitoring</a></li>
+	<li id="menu-item-1087" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1087 met-object-id-43"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/oil-spill-tracking/">Oil Spill Tracking</a></li>
+	<li id="menu-item-1088" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1088 met-object-id-44"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/polar-platforms/">Polar Platforms</a></li>
+	<li id="menu-item-1082" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1082 met-object-id-45"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/ice-management/">Ice Management</a></li>
+</ul></div>
+</li>
+<li id="menu-item-2150" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-2150 met-object-id-26 defence-link"><a href="https://www.freysatellitecorp.com/shop/defence-security/">Defence &#038; Security</a>
+<button class='sub-menu-toggle'><i class='icon-arrow-down'></i><span class='visuallyhidden'>Toggle Sub Menu</span></button><div class='sub-nav sub-nav-0'><ul class='sub-nav-group'>
+	<li id="menu-item-2174" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2174 met-object-id-69"><a href="https://www.freysatellitecorp.com/shop/defence-security/acoustic-monitoring/">Acoustic Monitoring</a></li>
+	<li id="menu-item-2170" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2170 met-object-id-67"><a href="https://www.freysatellitecorp.com/shop/defence-security/naval-systems/">Naval Systems</a></li>
+	<li id="menu-item-2171" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2171 met-object-id-68"><a href="https://www.freysatellitecorp.com/shop/defence-security/search-and-rescue/">Search &#038; Rescue</a></li>
+	<li id="menu-item-541" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-541 met-object-id-518"><a href="https://www.freysatellitecorp.com/surveillance/">Surveillance</a></li>
+</ul></div>
+</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+  </header>
+ 	<main class="container main" id="main" role="main" tabindex="-1">
+		<div class="row">
+			<div class="box twelvecol main__content">
+				<h1 class="box__heading box__heading--border-red secondary">Page Not Found - 404</h1>
+				<div class="box__inner box__inner--border-red secondary">
+					<article>
+						<p>Sorry, but the page you were trying to view does not exist.</p>
+						<p>It looks like this was the result of either:</p>
+						<ul>
+							<li>a mistyped address</li>
+							<li>an out-of-date link</li>
+						</ul>
+						<p>Try returning to the <a href="/">homepage</a> or using the search above.</p>
+					</article>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<section class="container container-fluid newsletter-form">
+	<div class="row row-fluid">
+		<h2 class="box__heading box__heading--border-red">Newsletter Signup</h2>
+					<div class="newsletter-form__content fivecol">
+				<div class="box__inner box__inner--border-red">
+					<p>Enter your email address to stay up to date with the latest news and events from Frey Satellite Corporation.</p>
+
+				</div>
+			</div>
+				<div class="newsletter-form__form sevencol last">
+							<noscript class="ninja-forms-noscript-message">
+    Notice: JavaScript is required for this content.</noscript><div id="nf-form-2-cont" class="nf-form-cont" aria-live="polite" aria-labelledby="nf-form-title-2" aria-describedby="nf-form-errors-2" role="form">
+
+    <div class="nf-loading-spinner"></div>
+
+</div>
+        <!-- TODO: Move to Template File. -->
+        <script>var formDisplay=1;var nfForms=nfForms||[];var form=[];form.id='2';form.settings={"objectType":"Form Setting","editActive":"1","title":"Newsletter Sign-up","created_at":"2019-07-18 14:49:59","form_title":"Newsletter Sign-up","default_label_pos":"above","show_title":"0","clear_complete":"1","hide_complete":"0","logged_in":"0","key":"","conditions":[],"wrapper_class":"","element_class":"","add_submit":"1","not_logged_in_msg":"","sub_limit_number":"","sub_limit_msg":"","calculations":[],"formContentData":["email","casl_consent","submit"],"container_styles_background-color":"","container_styles_border":"","container_styles_border-style":"","container_styles_border-color":"","container_styles_color":"","container_styles_height":"","container_styles_width":"","container_styles_font-size":"","container_styles_margin":"","container_styles_padding":"","container_styles_display":"","container_styles_float":"","container_styles_show_advanced_css":"0","container_styles_advanced":"","title_styles_background-color":"","title_styles_border":"","title_styles_border-style":"","title_styles_border-color":"","title_styles_color":"","title_styles_height":"","title_styles_width":"","title_styles_font-size":"","title_styles_margin":"","title_styles_padding":"","title_styles_display":"","title_styles_float":"","title_styles_show_advanced_css":"0","title_styles_advanced":"","row_styles_background-color":"","row_styles_border":"","row_styles_border-style":"","row_styles_border-color":"","row_styles_color":"","row_styles_height":"","row_styles_width":"","row_styles_font-size":"","row_styles_margin":"","row_styles_padding":"","row_styles_display":"","row_styles_show_advanced_css":"0","row_styles_advanced":"","row-odd_styles_background-color":"","row-odd_styles_border":"","row-odd_styles_border-style":"","row-odd_styles_border-color":"","row-odd_styles_color":"","row-odd_styles_height":"","row-odd_styles_width":"","row-odd_styles_font-size":"","row-odd_styles_margin":"","row-odd_styles_padding":"","row-odd_styles_display":"","row-odd_styles_show_advanced_css":"0","row-odd_styles_advanced":"","success-msg_styles_background-color":"","success-msg_styles_border":"","success-msg_styles_border-style":"","success-msg_styles_border-color":"","success-msg_styles_color":"","success-msg_styles_height":"","success-msg_styles_width":"","success-msg_styles_font-size":"","success-msg_styles_margin":"","success-msg_styles_padding":"","success-msg_styles_display":"","success-msg_styles_show_advanced_css":"0","success-msg_styles_advanced":"","error_msg_styles_background-color":"","error_msg_styles_border":"","error_msg_styles_border-style":"","error_msg_styles_border-color":"","error_msg_styles_color":"","error_msg_styles_height":"","error_msg_styles_width":"","error_msg_styles_font-size":"","error_msg_styles_margin":"","error_msg_styles_padding":"","error_msg_styles_display":"","error_msg_styles_show_advanced_css":"0","error_msg_styles_advanced":"","allow_public_link":"0","embed_form":"","currency":"","unique_field_error":"A form with this value has already been submitted.","changeEmailErrorMsg":"Please enter a valid email address!","changeDateErrorMsg":"Please enter a valid date!","confirmFieldErrorMsg":"These fields must match!","fieldNumberNumMinError":"Number Min Error","fieldNumberNumMaxError":"Number Max Error","fieldNumberIncrementBy":"Please increment by ","formErrorsCorrectErrors":"Please correct errors before submitting this form.","validateRequiredField":"This is a required field.","honeypotHoneypotError":"Honeypot Error","fieldsMarkedRequired":"Fields marked with an <span class=\"ninja-forms-req-symbol\">*<\/span> are required","drawerDisabled":"","ninjaForms":"Ninja Forms","fieldTextareaRTEInsertLink":"Insert Link","fieldTextareaRTEInsertMedia":"Insert Media","fieldTextareaRTESelectAFile":"Select a file","fileUploadOldCodeFileUploadInProgress":"File Upload in Progress.","fileUploadOldCodeFileUpload":"FILE UPLOAD","currencySymbol":"&#36;","thousands_sep":",","decimal_point":".","siteLocale":"en_US","dateFormat":"m\/d\/Y","startOfWeek":"1","of":"of","previousMonth":"Previous Month","nextMonth":"Next Month","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"weekdaysMin":["Su","Mo","Tu","We","Th","Fr","Sa"],"currency_symbol":"","beforeForm":"","beforeFields":"","afterFields":"","afterForm":""};form.fields=[{"objectType":"Field","objectDomain":"fields","editActive":false,"order":1,"label":"","key":"email","type":"email","created_at":"2019-07-18 14:49:59","label_pos":"hidden","required":1,"placeholder":"Enter Your Email Address","default":"","wrapper_class":"","element_class":"","container_class":"","admin_label":"","help_text":"","desc_text":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","cellcid":"c3281","custom_name_attribute":"email","personally_identifiable":1,"value":"","drawerDisabled":"","field_label":"","field_key":"email","id":5,"beforeField":"","afterField":"","parentType":"email","element_templates":["email","input"],"old_classname":"","wrap_template":"wrap"},{"objectType":"Field","objectDomain":"fields","editActive":false,"order":2,"type":"checkbox","label":"I agree to be contacted by Frey Satellite Corporation. I am aware that I can unsubscribe at any time.","key":"casl_consent","label_pos":"right","required":1,"container_class":"","element_class":"","manual_key":1,"admin_label":"","help_text":"","default_value":"unchecked","checked_value":1,"unchecked_value":0,"checked_calc_value":0,"unchecked_calc_value":0,"drawerDisabled":"","default":"unchecked","field_label":"I agree to be contacted by Frey Satellite Corporation. I am aware that I can unsubscribe at any time.","field_key":"casl_consent","value":"unchecked","id":6,"beforeField":"","afterField":"","parentType":"checkbox","element_templates":["checkbox","input"],"old_classname":"","wrap_template":"wrap"},{"objectType":"Field","objectDomain":"fields","editActive":false,"order":3,"label":"Submit","key":"submit","type":"submit","created_at":"2019-07-18 14:49:59","processing_label":"Processing","container_class":"","element_class":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","submit_element_hover_styles_background-color":"","submit_element_hover_styles_border":"","submit_element_hover_styles_border-style":"","submit_element_hover_styles_border-color":"","submit_element_hover_styles_color":"","submit_element_hover_styles_height":"","submit_element_hover_styles_width":"","submit_element_hover_styles_font-size":"","submit_element_hover_styles_margin":"","submit_element_hover_styles_padding":"","submit_element_hover_styles_display":"","submit_element_hover_styles_float":"","submit_element_hover_styles_show_advanced_css":0,"submit_element_hover_styles_advanced":"","cellcid":"c3287","field_label":"Submit","field_key":"submit","id":7,"beforeField":"","afterField":"","value":"","label_pos":"above","parentType":"textbox","element_templates":["submit","button","input"],"old_classname":"","wrap_template":"wrap-no-label"}];nfForms.push(form);</script>
+        
+
+					</div>
+	</div>
+</section>
+
+		<footer class="container container-fluid footer" role="contentinfo" >
+		<div class="row">
+			<div class="fourcol footer__about">
+				<a href="https://www.freysatellitecorp.com" class="logo-link"><img src="https://www.freysatellitecorp.com/wp-content/themes/metocean/dist/img/logo/metocean-logo-white.svg?x55604" alt="Frey Satellite Corporation Logo"></a>
+				<p><span style="font-weight: 400;">Frey Satellite Corporation specializes in satellite technology, including satellite phones and other Iridium hardware, satellite airtime plans, scientific instruments, and defence and security products. Frey Satellite Corporation is a renowned Value-Added Reseller (VAR) of </span><i><span style="font-weight: 400;">Iridium® </span></i><span style="font-weight: 400;">satellite products. Based in Gainesville, Florida, United States, Frey Satellite Corporation serves customers worldwide. For more information about any of our products, contact </span><a href="mailto:sales@freysatellitecorp.com"><span style="font-weight: 400;">sales@freysatellitecorp.com</span></a><span style="font-weight: 400;">.</span></p>
+
+					<script type="application/ld+json">
+						{
+							"@context": "http://schema.org",
+							"@type": "Organization",
+							"image": "https://www.freysatellitecorp.com/wp-content/themes/metocean/dist/img/logo/metocean-logo-color-schema.jpg",
+							"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "Dartmouth",
+							"addressRegion": "Nova Scotia",
+							"streetAddress": "21 Thornhill Drive"
+							},
+							"description": "Frey Satellite Corporation specializes in satellite technology, including satellite phones and other Iridium hardware, satellite airtime plans, scientific instruments, and defence and security products. Frey Satellite Corporation is a renowned Value-Added Reseller (VAR) of Iridium® satellite products. Based in Gainesville, Florida, United States, Frey Satellite Corporation serves customers worldwide. For more information about any of our products, contact sales@freysatellitecorp.com.",
+							"name": "Frey Satellite Corporation",
+							"telephone": "+1 321-307-2804"
+						}
+					</script>
+												</div>
+
+			<div class="twocol footer__secondary-menus">
+				<nav class="tool-menu">
+					<ul class="tool-menu__links tool-menu__account-links">
+						<li >
+							<a href="https://www.freysatellitecorp.com/contact-us/">
+								Contact Us							</a>
+						</li>
+													<li  >
+								<a href="https://www.freysatellitecorp.com/my-account/" title="Login / Register">
+									Login								</a>
+							</li>
+											</ul>
+				</nav>
+				<nav class="tertiary-menu">
+					<ul>
+						<li id="menu-item-3323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3323 met-object-id-21"><a href="https://www.freysatellitecorp.com/about-us/">About Us</a></li>
+<li id="menu-item-3324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3324 met-object-id-65"><a href="https://www.freysatellitecorp.com/about-us/careers/">Careers</a></li>
+<li id="menu-item-3325" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-3325 met-object-id-176"><a href="https://www.freysatellitecorp.com/news/">News</a></li>
+<li id="menu-item-3326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3326 met-object-id-236"><a href="https://www.freysatellitecorp.com/events/">Events</a></li>
+<li id="menu-item-3327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3327 met-object-id-15"><a href="https://www.freysatellitecorp.com/support/">Support</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="sixcol last">
+				<nav class="footer__primary-menu" id="footer-menu">
+					<ul>
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-978 met-object-id-24 telematics-link"><a href="https://www.freysatellitecorp.com/shop/telematics/">Telematics</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5403 met-object-id-5403"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-global-satellite-network/">Iridium Global Satellite Network</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-980 met-object-id-19"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-phones/">Iridium Satellite Phones</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-979 met-object-id-20"><a href="https://www.freysatellitecorp.com/shop/telematics/satellite-airtime-plans/">Iridium Satellite Airtime Plans</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1763 met-object-id-47"><a href="https://www.freysatellitecorp.com/shop/telematics/accessories/">Accessories</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1079 met-object-id-33"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-hardware/">Iridium® Hardware</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3447 met-object-id-3447"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-certus-broadband/">Iridium® CERTUS Broadband</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1080 met-object-id-34"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-satellite-modems-transceivers/">Satellite Modems &#038; Transceivers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1078 met-object-id-36"><a href="https://www.freysatellitecorp.com/shop/telematics/iridium-developer-kits/">Iridium® Developer Kits</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1076 met-object-id-37"><a href="https://www.freysatellitecorp.com/shop/telematics/asset-monitoring/">Asset Monitoring</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1895 met-object-id-63"><a href="https://www.freysatellitecorp.com/shop/telematics/provisioning-and-billing/">Provisioning and Billing</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-981 met-object-id-25 systems-link"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/">Frey Satellite Systems</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1083 met-object-id-38"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/novatech-beacons-and-flashers/">NOVATECH™ Beacons and Flashers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1081 met-object-id-42"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/current-monitoring/">Current Monitoring</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1087 met-object-id-43"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/oil-spill-tracking/">Oil Spill Tracking</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1088 met-object-id-44"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/polar-platforms/">Polar Platforms</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1082 met-object-id-45"><a href="https://www.freysatellitecorp.com/shop/metocean-systems/ice-management/">Ice Management</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-2150 met-object-id-26 defence-link"><a href="https://www.freysatellitecorp.com/shop/defence-security/">Defence &#038; Security</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2174 met-object-id-69"><a href="https://www.freysatellitecorp.com/shop/defence-security/acoustic-monitoring/">Acoustic Monitoring</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2170 met-object-id-67"><a href="https://www.freysatellitecorp.com/shop/defence-security/naval-systems/">Naval Systems</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2171 met-object-id-68"><a href="https://www.freysatellitecorp.com/shop/defence-security/search-and-rescue/">Search &#038; Rescue</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-541 met-object-id-518"><a href="https://www.freysatellitecorp.com/surveillance/">Surveillance</a></li>
+</ul>
+</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="fourcol footer__social">
+										<nav>
+							<ul class="footer__about--social">
+																	<li><a href="#"><span class="visuallyhidden">Twitter</span><i class="icon-twitter"></i></a></li>
+																									<li><a href="#"><span class="visuallyhidden">Facebook</span><i class="icon-facebook"></i></a></li>
+																									<li><a href="#"><span class="visuallyhidden">Linkedin</span><i class="icon-linkedin"></i></a></li>
+															</ul>
+						</nav>
+												</div>
+
+			<div class="eightcol last right footer__copyright">
+				<ul>
+					<li id="menu-item-2487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2487 met-object-id-4"><a href="https://www.freysatellitecorp.com/sitemap/">Sitemap</a></li>
+<li id="menu-item-2489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2489 met-object-id-169"><a href="https://www.freysatellitecorp.com/terms-conditions/">Terms &#038; Conditions</a></li>
+<li id="menu-item-2486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2486 met-object-id-171"><a href="https://www.freysatellitecorp.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-2488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2488 met-object-id-173"><a href="https://www.freysatellitecorp.com/privacy-policy/">Privacy Policy</a></li>
+					<li>&copy;2019 Frey Satellite Corporation</li>
+				</ul>
+			</div>
+	</footer>
+			<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4BMCFZ"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+				<script type="text/javascript">
+
+			var test_case = "borderImage";
+			if (!(test_case || test_case === '' && ('console' in window))) console.error('Outdated warning is configured incorrectly.');
+
+			var test_element = document.createElement('div');
+			if (!(test_case in test_element.style) && (document.cookie + '').indexOf('outdated-browser') === -1) {
+				document.documentElement.className += ' outdated-browser';
+
+				var close_warning = function () {
+					document.getElementById('outdated-browser-warning__close').onclick = function() {
+						document.cookie = "outdated-browser=1;path=/";
+						document.documentElement.className = document.documentElement.className.replace('outdated-browser', 'outdated-browser-hidden');
+					};
+				};
+
+				if ('addEventListener' in document) {
+					document.addEventListener('DOMContentLoaded', close_warning);
+				} else {
+					document.attachEvent("onreadystatechange", function () {
+						if (document.readyState === "complete") {
+							close_warning();
+						}
+					});
+				}
+			}
+
+			test_element = null;
+			</script>
+					<div class="outdated-browser-warning">
+			<strong class="outdated-browser-warning__alert">Warning!</strong>
+			<p class="outdated-browser-warning__message">
+				You are using an outdated browser. Things may not appear as intended. We recommend updating your browser to the latest version.				</p>
+				<a id="outdated-browser-warning__close" href="#" class="outdated-browser-warning__close">Close</a>
+			</div>
+
+			<style>.outdated-browser-warning{display:none}.outdated-browser .outdated-browser-warning{display:block;background-color:#b20208;color:#fff;position:fixed;bottom:0;text-align:center;z-index:9999;width:100%;min-height:80px;min-height:8rem;padding-top:10px;padding-top:1rem;padding-bottom:10px;padding-bottom:1rem;right:0;left:0}.outdated-browser .outdated-browser-warning .outdated-browser-warning__alert{font-size:24px;font-size:2.4rem}.outdated-browser .outdated-browser-warning .outdated-browser-warning__message{font-size:18px;font-size:1.8rem;margin-top:25px;margin-top:2.5rem;margin-bottom:25px;margin-bottom:2.5rem;margin-left:2%;margin-right:2%;display:inline-block}.outdated-browser .outdated-browser-warning .outdated-browser-warning__close{color:#fff;text-decoration:underline}1</style>
+			
+<!-- DO NOT COPY THIS SNIPPET! &mdash; HubSpot Identification Code -->
+<script type="text/javascript">
+(function(d,w) {
+w._hsq = w._hsq || [];
+w._hsq.push(["setContentType", "standard-page"]);
+})(document, window);
+</script>
+<!-- End of HubSpot Identification Code &mdash; DO NOT COPY THIS SNIPPET! -->
+
+<!-- Start of Async HubSpot Analytics Code for WordPress v1.2.1 -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3485462.js"></script>
+<!-- End of Async HubSpot Analytics Code -->
+<script type="text/javascript">
+<!--
+piCId = '1400';
+piAId = '745133';
+
+piHostname = 'pi.pardot.com';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+-->
+</script>	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<link rel='stylesheet' id='dashicons-css'  href='https://www.freysatellitecorp.com/wp-includes/css/dashicons.min.css?x55604&amp;ver=4.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='nf-display-css'  href='https://www.freysatellitecorp.com/wp-content/plugins/ninja-forms/assets/css/display-structure.css?x55604&amp;ver=4.9.10' type='text/css' media='all' />
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/6d18f.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/www.freysatellitecorp.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/dc06c.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/63a69.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_fd5da99c8487cfbdca342d17edc0b98d","fragment_name":"wc_fragments_fd5da99c8487cfbdca342d17edc0b98d"};
+/* ]]> */
+</script>
+
+
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/1e043.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var messages = {"url_error":"Please enter a URL","email_error":"Please enter a valid email"};
+/* ]]> */
+</script>
+
+
+
+
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/131a5.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sv_wc_payment_gateway_payment_form_params = {"card_number_missing":"Card number is missing","card_number_invalid":"Card number is invalid","card_number_digits_invalid":"Card number is invalid (only digits allowed)","card_number_length_invalid":"Card number is invalid (wrong length)","cvv_missing":"Card security code is missing","cvv_digits_invalid":"Card security code is invalid (only digits are allowed)","cvv_length_invalid":"Card security code is invalid (must be 3 or 4 digits)","card_exp_date_invalid":"Card expiration date is invalid","check_number_digits_invalid":"Check Number is invalid (only digits are allowed)","check_number_missing":"Check Number is missing","drivers_license_state_missing":"Drivers license state is missing","drivers_license_number_missing":"Drivers license number is missing","drivers_license_number_invalid":"Drivers license number is invalid","account_number_missing":"Account Number is missing","account_number_invalid":"Account Number is invalid (only digits are allowed)","account_number_length_invalid":"Account number is invalid (must be between 5 and 17 digits)","routing_number_missing":"Routing Number is missing","routing_number_digits_invalid":"Routing Number is invalid (only digits are allowed)","routing_number_length_invalid":"Routing number is invalid (must be 9 digits)"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/fd797.js?x55604"></script>
+
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAnaBRculdij8kXl-ZWqqmzVJXuwwSc4d0&#038;ver=4.9.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajaxurl = "https:\/\/www.freysatellitecorp.com\/wp-admin\/admin-ajax.php";
+/* ]]> */
+</script>
+
+
+
+
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/4cf12.js?x55604"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var nfi18n = {"ninjaForms":"Ninja Forms","changeEmailErrorMsg":"Please enter a valid email address!","changeDateErrorMsg":"Please enter a valid date!","confirmFieldErrorMsg":"These fields must match!","fieldNumberNumMinError":"Number Min Error","fieldNumberNumMaxError":"Number Max Error","fieldNumberIncrementBy":"Please increment by ","fieldTextareaRTEInsertLink":"Insert Link","fieldTextareaRTEInsertMedia":"Insert Media","fieldTextareaRTESelectAFile":"Select a file","formErrorsCorrectErrors":"Please correct errors before submitting this form.","validateRequiredField":"This is a required field.","honeypotHoneypotError":"Honeypot Error","fileUploadOldCodeFileUploadInProgress":"File Upload in Progress.","fileUploadOldCodeFileUpload":"FILE UPLOAD","currencySymbol":"$","fieldsMarkedRequired":"Fields marked with an <span class=\"ninja-forms-req-symbol\">*<\/span> are required","thousands_sep":",","decimal_point":".","siteLocale":"en_US","dateFormat":"m\/d\/Y","startOfWeek":"1","of":"of","previousMonth":"Previous Month","nextMonth":"Next Month","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"weekdaysMin":["Su","Mo","Tu","We","Th","Fr","Sa"]};
+var nfFrontEnd = {"adminAjax":"https:\/\/www.freysatellitecorp.com\/wp-admin\/admin-ajax.php","ajaxNonce":"d393a83d7f","requireBaseUrl":"https:\/\/www.freysatellitecorp.com\/wp-content\/plugins\/ninja-forms\/assets\/js\/","use_merge_tags":{"user":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"post":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"system":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"fields":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"calculations":{"html":"html","hidden":"hidden","note":"note","unknown":"unknown"}},"opinionated_styles":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.freysatellitecorp.com/wp-content/cache/minify/a99c7.js?x55604"></script>
+
+<!-- WooCommerce JavaScript -->
+<script type="text/javascript">
+jQuery(function($) { 
+
+					$( '.add_to_cart_button:not(.product_type_variable, .product_type_grouped)' ).click( function() {
+						ga( 'ec:addProduct', {'id': ($(this).data('product_sku')) ? ($(this).data('product_sku')) : ('#' + $(this).data('product_id')),'quantity': $(this).data('quantity')} );
+						ga( 'ec:setAction', 'add' );
+						ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+					});
+				
+ });
+</script>
+<script id="tmpl-nf-layout" type="text/template">
+	<span id="nf-form-title-{{{ data.id }}}" class="nf-form-title">
+		{{{ ( 1 == data.settings.show_title ) ? '<h3>' + data.settings.title + '</h3>' : '' }}}
+	</span>
+	<div class="nf-form-wrap ninja-forms-form-wrap">
+		<div class="nf-response-msg"></div>
+		<div class="nf-debug-msg"></div>
+		<div class="nf-before-form"></div>
+		<div class="nf-form-layout"></div>
+		<div class="nf-after-form"></div>
+	</div>
+</script>
+
+<script id="tmpl-nf-empty" type="text/template">
+
+</script>
+<script id="tmpl-nf-before-form" type="text/template">
+	{{{ data.beforeForm }}}
+</script><script id="tmpl-nf-after-form" type="text/template">
+	{{{ data.afterForm }}}
+</script><script id="tmpl-nf-before-fields" type="text/template">
+    <div class="nf-form-fields-required">{{{ data.renderFieldsMarkedRequired() }}}</div>
+    {{{ data.beforeFields }}}
+</script><script id="tmpl-nf-after-fields" type="text/template">
+    {{{ data.afterFields }}}
+    <div id="nf-form-errors-{{{ data.id }}}" class="nf-form-errors" role="alert"></div>
+    <div class="nf-form-hp"></div>
+</script>
+<script id="tmpl-nf-before-field" type="text/template">
+    {{{ data.beforeField }}}
+</script><script id="tmpl-nf-after-field" type="text/template">
+    {{{ data.afterField }}}
+</script><script id="tmpl-nf-form-layout" type="text/template">
+	<form>
+		<div>
+			<div class="nf-before-form-content"></div>
+			<div class="nf-form-content {{{ data.element_class }}}"></div>
+			<div class="nf-after-form-content"></div>
+		</div>
+	</form>
+</script><script id="tmpl-nf-form-hp" type="text/template">
+	<label for="nf-field-hp-{{{ data.id }}}" aria-hidden="true">
+		{{{ nfi18n.formHoneypot }}}
+		<input id="nf-field-hp-{{{ data.id }}}" name="nf-field-hp" class="nf-element nf-field-hp" type="text" value=""/>
+	</label>
+</script>
+<script id="tmpl-nf-field-layout" type="text/template">
+    <div id="nf-field-{{{ data.id }}}-container" class="nf-field-container {{{ data.type }}}-container {{{ data.renderContainerClass() }}}">
+        <div class="nf-before-field"></div>
+        <div class="nf-field"></div>
+        <div class="nf-after-field"></div>
+    </div>
+</script>
+<script id="tmpl-nf-field-before" type="text/template">
+    {{{ data.beforeField }}}
+</script><script id="tmpl-nf-field-after" type="text/template">
+    <#
+    /*
+     * Render our input limit section if that setting exists.
+     */
+    #>
+    <div class="nf-input-limit"></div>
+    <#
+    /*
+     * Render our error section if we have an error.
+     */
+    #>
+    <div id="nf-error-{{{ data.id }}}" class="nf-error-wrap nf-error" role="alert"></div>
+    <#
+    /*
+     * Render any custom HTML after our field.
+     */
+    #>
+    {{{ data.afterField }}}
+</script>
+<script id="tmpl-nf-field-wrap" type="text/template">
+	<div id="nf-field-{{{ data.id }}}-wrap" class="{{{ data.renderWrapClass() }}}" data-field-id="{{{ data.id }}}">
+		<#
+		/*
+		 * This is our main field template. It's called for every field type.
+		 * Note that must have ONE top-level, wrapping element. i.e. a div/span/etc that wraps all of the template.
+		 */
+        #>
+		<#
+		/*
+		 * Render our label.
+		 */
+        #>
+		{{{ data.renderLabel() }}}
+		<#
+		/*
+		 * Render our field element. Uses the template for the field being rendered.
+		 */
+        #>
+		<div class="nf-field-element">{{{ data.renderElement() }}}</div>
+		<#
+		/*
+		 * Render our Description Text.
+		 */
+        #>
+		{{{ data.renderDescText() }}}
+	</div>
+</script>
+<script id="tmpl-nf-field-wrap-no-label" type="text/template">
+    <div id="nf-field-{{{ data.id }}}-wrap" class="{{{ data.renderWrapClass() }}}" data-field-id="{{{ data.id }}}">
+        <div class="nf-field-label"></div>
+        <div class="nf-field-element">{{{ data.renderElement() }}}</div>
+        <div class="nf-error-wrap"></div>
+    </div>
+</script>
+<script id="tmpl-nf-field-wrap-no-container" type="text/template">
+
+        {{{ data.renderElement() }}}
+
+        <div class="nf-error-wrap"></div>
+</script>
+<script id="tmpl-nf-field-label" type="text/template">
+	<div class="nf-field-label"><label for="nf-field-{{{ data.id }}}"
+	                                   id="nf-label-field-{{{ data.id }}}"
+	                                   class="{{{ data.renderLabelClasses() }}}">{{{ data.label }}} {{{ ( 'undefined' != typeof data.required && 1 == data.required ) ? '<span class="ninja-forms-req-symbol">*</span>' : '' }}} {{{ data.maybeRenderHelp() }}}</label></div>
+</script>
+<script id="tmpl-nf-field-error" type="text/template">
+	<div class="nf-error-msg nf-error-{{{ data.id }}}">{{{ data.msg }}}</div>
+</script><script id="tmpl-nf-form-error" type="text/template">
+	<div class="nf-error-msg nf-error-{{{ data.id }}}">{{{ data.msg }}}</div>
+</script><script id="tmpl-nf-field-input-limit" type="text/template">
+    {{{ data.currentCount() }}} {{{ nfi18n.of }}} {{{ data.input_limit }}} {{{ data.input_limit_msg }}}
+</script><script id="tmpl-nf-field-null" type="text/template">
+</script><script id="tmpl-nf-field-email" type="text/template">
+	<input
+			type="email"
+			value="{{{ data.value }}}"
+			class="{{{ data.renderClasses() }}} nf-element"
+
+			id="nf-field-{{{ data.id }}}"
+			<# if( ! data.disable_browser_autocompletes ){ #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id + '-' + data.type }}"
+			autocomplete="email"
+			<# } else { #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id }}"
+			{{{ data.maybeDisableAutocomplete() }}}
+			<# } #>
+			{{{ data.renderPlaceholder() }}}
+			{{{ data.maybeDisabled() }}}
+
+			aria-invalid="false"
+			aria-describedby="nf-error-{{{ data.id }}}"
+			aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+			{{{ data.maybeRequired() }}}
+	>
+</script>
+<script id='tmpl-nf-field-input' type='text/template'>
+    <input id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-invalid="false" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" type="text" value="{{{ data.value }}}" {{{ data.renderPlaceholder() }}} {{{ data.maybeDisabled() }}}
+           aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+            {{{ data.maybeRequired() }}}
+    >
+</script>
+<script id="tmpl-nf-field-checkbox" type="text/template">
+	<input id="nf-field-{{{ data.id }}}"
+	       name="nf-field-{{{ data.id }}}"
+	       aria-describedby="nf-error-{{{ data.id }}}"
+	       class="{{{ data.renderClasses() }}} nf-element"
+	       type="checkbox"
+	       value="1" {{{ data.maybeDisabled() }}}{{{ data.maybeChecked() }}}
+	       aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+			{{{ data.maybeRequired() }}}
+	>
+</script>
+<script id="tmpl-nf-field-submit" type="text/template">
+	<input id="nf-field-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element " type="button" value="{{{ data.label }}}" {{{ ( data.disabled ) ? 'disabled' : '' }}}>
+</script><script id='tmpl-nf-field-button' type='text/template'>
+    <button id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" class="{{{ data.classes }}} nf-element">
+        {{{ data.label }}}
+    </button>
+</script>        <script>
+            var post_max_size = '128';
+            var upload_max_filesize = '128';
+            var wp_memory_limit = '40';
+        </script>
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5abd0c8fb1","applicationID":"207941868","transactionName":"MlQAYEcAXkcDU0MKVgseI1dBCF9aTQQHVw==","queueTime":0,"applicationTime":215,"atts":"HhMDFg8aTUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 108/118 objects using apc
+Page Caching using disk: enhanced (Page is 404) 
+Minified using disk
+Database Caching 24/25 queries in 0.005 seconds using memcached
+
+Served from: www.freysatellitecorp.com @ 2019-09-30 22:49:01 by W3 Total Cache
+-->
